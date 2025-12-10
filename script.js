@@ -13,31 +13,33 @@ console.log(ulEl)
 
 function saveWebsites(){
 
-    myLeads.push(inputEl.value)
-    console.log(myLeads)
-    let listItems = ""
-    for (let i=0; i<myLeads.length; i++){
-        console.log(myLeads[i])
-    listItems += `<li>
-            <a> 
+    // myLeads.push(inputEl.value)
+    // console.log(myLeads)
+    // let listItems = ""
+    // for (let i=0; i<myLeads.length; i++){
+    //     console.log(myLeads[i])
+    // listItems += `<li>
+    //         <a> 
             
-                ${myLeads[i]} 
+    //             ${myLeads[i]} 
                 
-            </a>
-        </li>`
+    //         </a>
+    //     </li>`
 
-      console.log(listItems)
-    }
+    //   console.log(listItems)
+    // }
 
-    ulEl.innerHTML = listItems
-    inputEl.value="" //emptying the input field once the function completes
+    // ulEl.innerHTML = listItems
+    // inputEl.value="" //emptying the input field once the function completes
 
+    //simple way to directly store the values of the input field inside the list and have them available as HTML list values through the help of innerHTML method
+ 
 
-    // let listItems = "<li>" + inputEl.value +"</li>"
+    let listItems = "<li>" + inputEl.value +"</li>"
     
-    // ulEl.innerHTML += listItems
+    ulEl.innerHTML += listItems
 
-    // inputEl.value=""
+    inputEl.value=""
 }
 
 // function saveWebsites1(){
