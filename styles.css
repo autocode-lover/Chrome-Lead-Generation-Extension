@@ -17,7 +17,7 @@ h2{
 
 .main-container{
     background-color:var(--secondary-color);
-    width: 30%;
+    width: 40%;
     max-width: 700px;
     margin: 2rem auto;
     padding: 2rem;
@@ -32,6 +32,10 @@ h2{
 
 .b-r-20px{
     border-radius: 20px;
+}
+
+a{
+    color:var(--tertiary-color);
 }
 
 #save-btn{

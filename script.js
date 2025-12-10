@@ -16,7 +16,9 @@ function saveWebsites(){
     //simple way to directly store the values of the input field inside the list and have them available as HTML list values through the help of innerHTML method
  
 
-    let listItems = "<li>" + inputEl.value +"</li>"
+    // let listItems = "<li>" + inputEl.value +"</li>"
+
+    let listItems = `<li><a target="_blank" href="${inputEl.value}">${inputEl.value}</a></li>`
     
     ulEl.innerHTML += listItems
 
