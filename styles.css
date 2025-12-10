@@ -17,9 +17,7 @@ h2{
 
 .main-container{
     background-color:var(--secondary-color);
-    width: 40%;
-    max-width: 700px;
-    margin: 2rem auto;
+    min-width: 400px;
     padding: 2rem;
 
 }

@@ -9,6 +9,7 @@ console.log(inputEl)
 let ulEl = document.getElementById("ul-el")
 console.log(ulEl)
 
+document.getElementById("save-btn").addEventListener("click", saveWebsites);
 
 
 function saveWebsites(){
