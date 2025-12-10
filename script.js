@@ -1,5 +1,5 @@
 
-let myLeads= ["website1.com", "website2.com" , "website3.com"]
+let myLeadsWithItems= ["website1.com", "website2.com" , "website3.com"]
 
 let inputEl = document.getElementById("input-el")
 console.log(inputEl)
@@ -11,12 +11,12 @@ console.log(ulEl)
 
 function saveWebsites(){
     let listItems = ""
-    for (let i=0; i<myLeads.length; i++){
-        console.log(myLeads[i])
+    for (let i=0; i<myLeadsWithItems.length; i++){
+        console.log(myLeadsWithItems[i])
     listItems += `<li>
             <a> 
             
-                ${myLeads[i]} 
+                ${myLeadsWithItems[i]} 
                 
             </a>
         </li>`
