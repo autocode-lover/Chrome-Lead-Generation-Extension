@@ -17,7 +17,8 @@ h2{
 
 .main-container{
     background-color:var(--secondary-color);
-    min-width: 400px;
+    width: 500px;
+    margin: 3rem auto;
     padding: 2rem;
 
 }
