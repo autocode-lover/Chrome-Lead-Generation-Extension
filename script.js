@@ -11,19 +11,19 @@ console.log(ulEl)
 
 document.getElementById("save-btn").addEventListener("click", saveWebsitesThroughPushingItemsViaAnEmptyArray);
 
-function saveWebsites(){
 
-    //simple way to directly store the values of the input field inside the list and have them available as HTML list values through the help of innerHTML method
- 
+//we retrieve from previous sessions, what values were stored in the local storage
+let leadsFromLocalStorageValues = JSON.parse(localStorage.getItem("myWebsites"))
+console.log(leadsFromLocalStorageValues)
 
-    // let listItems = "<li>" + inputEl.value +"</li>"
+//we tell if there are previous values, just have it present
 
-    let listItems = `<li><a target="_blank" href="${inputEl.value}">${inputEl.value}</a></li>`
-    
-    ulEl.innerHTML += listItems
-
-    inputEl.value=""
+if (leadsFromLocalStorageValues){
+    myLeads = leadsFromLocalStorageValues
+    saveWebsitesThroughPushingItemsViaAnEmptyArray()
 }
+
+//in this function we populate an empty array with input data
 
 function saveWebsitesThroughPushingItemsViaAnEmptyArray(){
 
@@ -50,6 +50,7 @@ function saveWebsitesThroughPushingItemsViaAnEmptyArray(){
 renderLeads()
 }
 
+// in this function we simply convert the input values into HTML lists
 function renderLeads(){
      let listItems = ""
     for (let i=0; i<myLeads.length; i++){
@@ -65,6 +66,21 @@ function renderLeads(){
 
     ulEl.innerHTML = listItems
     inputEl.value="" //emptying the input field once the function completes
+}
+
+
+function saveWebsites(){
+
+    //simple way to directly store the values of the input field inside the list and have them available as HTML list values through the help of innerHTML method
+ 
+
+    // let listItems = "<li>" + inputEl.value +"</li>"
+
+    let listItems = `<li><a target="_blank" href="${inputEl.value}">${inputEl.value}</a></li>`
+    
+    ulEl.innerHTML += listItems
+
+    inputEl.value=""
 }
 
 // function saveWebsites1(){
