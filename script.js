@@ -9,6 +9,8 @@ console.log(inputEl)
 let ulEl = document.getElementById("ul-el")
 console.log(ulEl)
 
+const deleteBtn = document.getElementById("delete-btn")
+
 document.getElementById("save-btn").addEventListener("click", saveWebsitesThroughPushingItemsViaAnEmptyArray);
 
 
@@ -22,6 +24,14 @@ if (leadsFromLocalStorageValues){
     myLeads = leadsFromLocalStorageValues
     saveWebsitesThroughPushingItemsViaAnEmptyArray()
 }
+
+deleteBtn.addEventListener("dblclick", function(){
+    console.log("double-clicked")
+    localStorage.clear()
+    myLeads=[]
+    renderLeads()
+})
+
 
 //in this function we populate an empty array with input data
 
