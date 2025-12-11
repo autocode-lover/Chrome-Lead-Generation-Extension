@@ -9,8 +9,7 @@ console.log(inputEl)
 let ulEl = document.getElementById("ul-el")
 console.log(ulEl)
 
-document.getElementById("save-btn").addEventListener("click", saveWebsites);
-
+document.getElementById("save-btn").addEventListener("click", saveWebsitesThroughPushingItemsViaAnEmptyArray);
 
 function saveWebsites(){
 
@@ -27,20 +26,41 @@ function saveWebsites(){
 }
 
 function saveWebsitesThroughPushingItemsViaAnEmptyArray(){
-     myLeads.push(inputEl.value)
+
+   
+   //first we push what the user enters to an empty array
+    myLeads.push(inputEl.value)
     console.log(myLeads)
-    let listItems = ""
+    
+
+    //we store our data
+    //storage area        //keys     // values (user entered values in this case)
+
+//    localStorage.setItem("myWebsites", "valuelead.com")
+
+ localStorage.setItem("myWebsites", JSON.stringify(myLeads))
+ 
+// console.log(localStorage.getItem(myLeads))
+
+ let localStorageValues = localStorage.getItem("myWebsites")
+ 
+ console.log("localStorageValue", localStorageValues)
+
+
+renderLeads()
+}
+
+function renderLeads(){
+     let listItems = ""
     for (let i=0; i<myLeads.length; i++){
         console.log(myLeads[i])
     listItems += `<li>
-            <a> 
+            <a target="_blank" href="${myLeads[i]}"> 
             
                 ${myLeads[i]} 
                 
             </a>
         </li>`
-
-      console.log(listItems)
     }
 
     ulEl.innerHTML = listItems
