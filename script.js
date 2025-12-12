@@ -20,6 +20,7 @@ const tabs = [{url:"linkedin.com/vasanth-chandran"}]
 tabBtn.addEventListener("click", function(){
 console.log(tabs[0].url)
 myLeads.push(tabs[0].url)
+localStorage.setItem("myWebsites", JSON.stringify(myLeads))
 renderLeads(myLeads)
 })
 
