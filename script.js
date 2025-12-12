@@ -22,14 +22,33 @@ console.log(leadsFromLocalStorageValues)
 
 if (leadsFromLocalStorageValues){
     myLeads = leadsFromLocalStorageValues
-    saveWebsitesThroughPushingItemsViaAnEmptyArray()
+    renderLeads(myLeads)
+}
+
+
+// in this function we simply convert the input values into HTML lists
+function renderLeads(anyLeadListValue){
+     let listItems = ""
+    for (let i=0; i<anyLeadListValue.length; i++){
+        console.log(anyLeadListValue[i])
+    listItems += `<li>
+            <a target="_blank" href="${anyLeadListValue[i]}"> 
+            
+                ${anyLeadListValue[i]} 
+                
+            </a>
+        </li>`
+    }
+
+    ulEl.innerHTML = listItems
+    inputEl.value="" //emptying the input field once the function completes
 }
 
 deleteBtn.addEventListener("dblclick", function(){
     console.log("double-clicked")
     localStorage.clear()
     myLeads=[]
-    renderLeads()
+    renderLeads(myLeads)
 })
 
 
@@ -57,26 +76,9 @@ function saveWebsitesThroughPushingItemsViaAnEmptyArray(){
  console.log("localStorageValue", localStorageValues)
 
 
-renderLeads()
+renderLeads(myLeads)
 }
 
-// in this function we simply convert the input values into HTML lists
-function renderLeads(){
-     let listItems = ""
-    for (let i=0; i<myLeads.length; i++){
-        console.log(myLeads[i])
-    listItems += `<li>
-            <a target="_blank" href="${myLeads[i]}"> 
-            
-                ${myLeads[i]} 
-                
-            </a>
-        </li>`
-    }
-
-    ulEl.innerHTML = listItems
-    inputEl.value="" //emptying the input field once the function completes
-}
 
 
 function saveWebsites(){
