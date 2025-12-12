@@ -15,13 +15,15 @@ document.getElementById("save-btn").addEventListener("click", saveWebsitesThroug
 
 const tabBtn = document.getElementById("tab-btn")
 
-const tabs = [{url:"linkedin.com/vasanth-chandran"}]
+// const tabs = [{url:"linkedin.com/vasanth-chandran"}]
 
 tabBtn.addEventListener("click", function(){
-console.log(tabs[0].url)
+chrome.tabs.query({active: true, currentWindow: true}, function(){
 myLeads.push(tabs[0].url)
 localStorage.setItem("myWebsites", JSON.stringify(myLeads))
 renderLeads(myLeads)
+})
+
 })
 
 
