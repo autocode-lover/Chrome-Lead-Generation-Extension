@@ -17,13 +17,12 @@ const tabBtn = document.getElementById("tab-btn")
 
 // const tabs = [{url:"linkedin.com/vasanth-chandran"}]
 
-tabBtn.addEventListener("click", function(){
-chrome.tabs.query({active: true, currentWindow: true}, function(){
-myLeads.push(tabs[0].url)
-localStorage.setItem("myWebsites", JSON.stringify(myLeads))
-renderLeads(myLeads)
-})
-
+tabBtn.addEventListener("click", function(){    
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myWebsites", JSON.stringify(myLeads) )
+        renderLeads(myLeads)
+    })
 })
 
 
