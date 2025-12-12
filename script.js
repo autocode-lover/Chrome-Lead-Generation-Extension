@@ -13,6 +13,16 @@ const deleteBtn = document.getElementById("delete-btn")
 
 document.getElementById("save-btn").addEventListener("click", saveWebsitesThroughPushingItemsViaAnEmptyArray);
 
+const tabBtn = document.getElementById("tab-btn")
+
+const tabs = [{url:"linkedin.com/vasanth-chandran"}]
+
+tabBtn.addEventListener("click", function(){
+console.log(tabs[0].url)
+myLeads.push(tabs[0].url)
+renderLeads(myLeads)
+})
+
 
 //we retrieve from previous sessions, what values were stored in the local storage
 let leadsFromLocalStorageValues = JSON.parse(localStorage.getItem("myWebsites"))
